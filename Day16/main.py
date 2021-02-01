@@ -1,16 +1,24 @@
-# This is a sample Python script.
+from menu import Menu, MenuItem
+from coffee_maker import CoffeeMaker
+from money_machine import MoneyMachine
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+my_coffee_maker = CoffeeMaker()
+my_money_machine = MoneyMachine()
+my_menu = Menu()
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Goodbye, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+continue_coffee = True
+while continue_coffee:
+    choice = input(f"What would you like? ({my_menu.get_items()}): ").lower()
+    if choice == 'report':
+        my_coffee_maker.report()
+        my_money_machine.report()
+    elif choice == 'off':
+        continue_coffee = False
+    else:
+        my_menu_item = my_menu.find_drink(choice)
+        if my_menu_item is not None:
+            is_sufficient_resource = my_coffee_maker.is_resource_sufficient(my_menu_item)
+            if is_sufficient_resource:
+                is_sufficient_payment = my_money_machine.make_payment(my_menu_item.cost)
+                if is_sufficient_payment:
+                    my_coffee_maker.make_coffee(my_menu_item)
