@@ -23,6 +23,8 @@ class Snake:
             new_segment.setpos(pos)
             self.segments.append(new_segment)
 
+#    def add_segment(self):
+
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):
             new_x = self.segments[seg_num - 1].xcor()
