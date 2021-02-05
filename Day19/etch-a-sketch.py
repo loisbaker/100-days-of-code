@@ -20,7 +20,7 @@ def turn_clockwise():
     turtle.setheading(turtle.heading() - 10)
 
 
-def clear_turtle():
+def clear_turtle():a
     turtle.reset()
 
 
