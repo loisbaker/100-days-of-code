@@ -30,7 +30,7 @@ def play_pong():
     ball.refresh()
     while game_on:
         ball.move()
-        time.sleep(0.05)
+        time.sleep(ball.move_speed)
         screen.update()
         # If hits the wall:
         if abs(ball.ycor()) > 270:
