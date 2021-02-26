@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import math
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
