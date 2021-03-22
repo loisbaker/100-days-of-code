@@ -36,6 +36,6 @@ for correct_state in correct_answers:
     state_data = state_data[state_data.state != correct_state]
 
 
-state_data.to_csv('state_to_learn.csv')
+state_data.to_csv('state_to_learn.csv', index=False)
 
 
